@@ -1,0 +1,99 @@
+--[[
+#=====================================================================================
+#
+# Date    : package-date
+# Author  : http://zagortenay333.deviantart.com/art/Conky-Vision-395777503
+# Github  : https://github.com/zagortenay333/conky-Vision
+# Editor  : Erik Dubois
+# Version : package-version
+# License : Distributed under the terms of GNU GPL version 2 or later
+#=====================================================================================
+# CONKY
+# For commands in conky.config section:
+# http://conky.sourceforge.net/config_settings.html
+#
+# For commands in conky.text section:
+# http://conky.sourceforge.net/variables.html
+#
+# A PDF with all variables is provided
+#=====================================================================================
+# FONTS
+# To avoid copyright infringements you will have to download
+# and install the fonts yourself sometimes.
+#=====================================================================================
+# GENERAL INFO ABOUT FONTS
+# Go and look for a nice font on sites like http://www.dafont.com/
+# Download and unzip - double click the font to install it (font-manager must be installed)
+# No font-manager then put fonts in ~/.fonts
+# Change the font name in the conky
+# The name can be known with a command in the terminal: fc-list | grep "part of name"
+# Change width and height of the conky according to font
+# Reboot your system or fc-cache -fv in terminal
+# Enjoy
+#=====================================================================================
+# FONTS FOR THIS CONKY
+# no extra font(s) needed
+#=====================================================================================
+# The conky code is not in the lua format.
+
+]]
+
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=false,
+update_interval=1,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+gap_x=0,
+gap_y=50,
+
+alignment="middle_middle",
+
+minimum_height=400,
+minimum_width=600,
+
+own_window=true,
+own_window_type="desktop",
+own_window_transparent=true,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+use_xft=true,
+xftalpha=1,
+font="Droid Sans:size=10",
+text_buffer_size=256,
+override_utf8_locale=true,
+
+default_color='FFFFFF',
+color0='FFFFFF', -- clock
+color1='FFFFFF', -- date
+}
+conky.text = [[
+\
+${font Roboto:weight=Bold:size=96}${color0}\
+${alignc}${time %H:%M}\
+${font}${color}
+\
+${font PoiretOne:weight=Regular:size=28}${color1}\
+${voffset 30}\
+${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A, %B %d"}\
+${font}${color}
+\
+]]

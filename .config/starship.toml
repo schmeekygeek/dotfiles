@@ -1,0 +1,19 @@
+format = """
+ $path$directory$package$git_branch$java
+ $character"""
+add_newline = true
+
+[package]
+format = "[$version]($style) "
+disabled = false
+
+[directory]
+truncation_length = 3
+truncation_symbol = ".../"
+style = "bold cyan"
+read_only = "🔒"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[character]
+success_symbol = "[▶](bold green)"
+error_symbol = "[✗](bold red)"
