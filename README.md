@@ -1,6 +1,6 @@
 # My own personal dotfiles
 
-![screenshot](screenshot.jpg)
+![screenshot](screenshot1.jpg)
 
 Software that I use:
 * [alacritty](https://github.com/alacritty/alacritty) -> Terminal
