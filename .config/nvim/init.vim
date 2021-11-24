@@ -9,12 +9,17 @@ scriptencoding utf-8
 if !1 | finish | endif
 
 set nocompatible
+set backspace=indent,eol,start
+set relativenumber
 set number
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
 set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
 set background=dark
 set nobackup
 set hlsearch
@@ -47,8 +52,6 @@ set ignorecase
 set smarttab
 " indents
 filetype plugin indent on
-set shiftwidth=2
-set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
@@ -62,15 +65,14 @@ autocmd InsertLeave * set nopaste
 
 " Add asterisks in block comments
 set formatoptions+=r
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
 "}}}
 
 " Highlights "{{{
 " ---------------------------------------------------------------------
-set cursorline
-"set cursorcolumn
 
-" Set cursor line color on visual mode
 highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
 
 highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
@@ -124,10 +126,18 @@ endif
 runtime ./maps.vim
 "}}}
 
-" Extras "{{{
-" ---------------------------------------------------------------------
-set exrc
-"}}}
+"" Extras "{{{
+"" ---------------------------------------------------------------------
+"set exrc
+""}}}
+
+lua require'lspconfig'.jdtls.setup{
+\   cmd = { 'jdtls' },
+\   root_dir = function(fname)
+\      return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
+\   end
+\}
+
+" autocmd FileType java setLocal omnifunc=javacomplete#Complete
 
 " vim: set foldmethod=marker foldlevel=0:
-source $HOME/.config/nvim/themes/onedark.vim

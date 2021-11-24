@@ -1,20 +1,12 @@
-if !exists('g:loaded_telescope') | finish | endif
+nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
+nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
+nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
+nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
 
-nnoremap  <silent> ;f <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap  <silent> ;r <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap  <silent> ;b <cmd>lua require('telescope.builtin').file_browser()<cr>
-nnoremap <silent> \\ <cmd>Telescope buffers<cr>
-nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
-
-lua << EOF
-function telescope_buffer_dir()
-  return vim.fn.expand('%:p:h')
-end
-
-local telescope = require('telescope')
+lua <<EOF
 local actions = require('telescope.actions')
 
-telescope.setup{
+require('telescope').setup {
   defaults = {
     mappings = {
       n = {
@@ -24,5 +16,3 @@ telescope.setup{
   }
 }
 EOF
-
-
