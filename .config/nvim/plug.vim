@@ -27,6 +27,7 @@ if has("nvim")
     Plug 'onsails/lspkind-nvim'
     Plug 'Shatur/neovim-ayu'
     Plug 'catppuccin/nvim'
+    Plug 'kdheepak/tabline'
 endif
 
 call plug#end()
