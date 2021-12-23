@@ -1,6 +1,6 @@
 # My Own Personal Dotfiles
 
-###Software that I use:
+### Software that I use:
 * [alacritty](https://github.com/alacritty/alacritty) -> Terminal
 * [bspwm](https://github.com/baskerville/bspwm) -> Window Manager
 * [conky widget](https://github.com/brndnmtthws/conky) -> System Monitor
@@ -12,14 +12,14 @@
 * [polybar](https://github.com/polybar/polybar) -> Status Bar
 * [ranger](https://github.com/ranger/ranger) -> Backup File Manager
 
-###Gallery
-####New
-![screenshot](screenshot2.jpg)
-![screenshot](screenshot3.jpg)
-![screenshot](screenshot4.jpg)
+### Gallery
+#### New
+![screenshot](screenshots/screenshot2.jpg)
+![screenshot](screenshots/screenshot3.jpg)
+![screenshot](screenshots/screenshot4.jpg)
 
-####Old
-![screenshot](screenshot1.jpg)
+#### Old
+![screenshot](screenshots/screenshot1.jpg)
 
-###Credits:
+### Credits:
 * [adi1090x](https://github.com/adi1090x/polybar-themes) -> Polybar Themes
