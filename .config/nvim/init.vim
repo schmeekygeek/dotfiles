@@ -29,7 +29,7 @@ set laststatus=2
 set scrolloff=10
 set expandtab
 "let loaded_matchparen = 1
-set shell=fish
+set shell=bash
 set backupskip=/tmp/*,/private/tmp/*
 
 " incremental substitution (neovim)
@@ -145,10 +145,12 @@ endif
 runtime ./maps.vim
 "}}}
 
-"" Extras "{{{
-"" ---------------------------------------------------------------------
-"set exrc
-""}}}
+" Mappings "{{{
+" ---------------------------------------------------------------------
+nnoremap gp :silent %!prettier --use-tabs --tab-width=4 --stdin-filepath %<CR>
+nnoremap vs :vsplit <CR>
+nnoremap <C-c> <silent> :!pbcopy<CR>
+"}}}
 
 augroup BgHighlight
   autocmd!
@@ -161,5 +163,6 @@ if &term =~ "screen"
   autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
 endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme ayu-dark
 " vim: set foldmethod=marker foldlevel=0:

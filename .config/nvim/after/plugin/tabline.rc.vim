@@ -1,47 +1,21 @@
-" Description: My custom tabline settings
+"Keymappings
+nnoremap t :TablineBufferNext<CR>
+nnoremap T :TablineBufferPrevious<CR>
 
-function MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
-
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSep#'
-    elseif i + 2 == tabpagenr()
-      let s .= '%#TabLineSep2#'
-    else
-      let s .= ''
-    endif
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#TabLine#%999X'
-  endif
-
-  return s
-endfunction
-
-function MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  let name = bufname(buflist[winnr - 1])
-  let label = fnamemodify(name, ':t')
-  return len(label) == 0 ? '[No Name]' : label
-endfunction
-
-set tabline=%!MyTabLine()
+lua <<EOF
+require'tabline'.setup {
+      -- Defaults configuration options
+      enable = true,
+      options = {
+      -- If lualine is installed tabline will use separators configured in lualine by default.
+      -- These options can be used to override those settings.
+        section_separators = {'', ''},
+        component_separators = {'', ''},
+        max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
+        show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
+        show_devicons = true, -- this shows devicons in buffer section
+        show_bufnr = false, -- this appends [bufnr] to buffer section,
+        show_filename_only = true, -- shows base filename only instead of relative path in filename
+      }
+    }
+EOF
