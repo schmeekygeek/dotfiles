@@ -8,15 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -24,15 +16,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -48,9 +32,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xset r rate 190 35 &
+xset r rate 210 35 &
 xset -b &
 nitrogen --restore &
 picom &
+conky -c ~/.config/conky/geddy/geddy.conkyrc &
+sh ~/.config/polybar/forest/launch.sh &
 exec bspwm &
-exec sxhkd
+exec sxhkd 
