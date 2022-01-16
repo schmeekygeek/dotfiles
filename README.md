@@ -14,7 +14,7 @@
 ### Gallery
 
 #### Kanagawa
-![screenshot](screenshots/screenshot4.jpg)
+![screenshot](screenshots/Kanagawa.jpg)
 
 #### Old
 ![screenshot](screenshots/screenshot2.jpg)
