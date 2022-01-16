@@ -10,16 +10,20 @@
 * [sxhkd](https://github.com/baskerville/sxhkd) -> Hotkey Daemon
 * [starship](https://starship.rs) -> Shell Prompt
 * [polybar](https://github.com/polybar/polybar) -> Status Bar
-* [ranger](https://github.com/ranger/ranger) -> Backup File Manager
 
 ### Gallery
-#### New
-![screenshot](screenshots/screenshot2.jpg)
-![screenshot](screenshots/screenshot3.jpg)
+
+#### Kanagawa
 ![screenshot](screenshots/screenshot4.jpg)
 
 #### Old
+![screenshot](screenshots/screenshot2.jpg)
+![screenshot](screenshots/screenshot3.jpg)
+
+#### Old Old
 ![screenshot](screenshots/screenshot1.jpg)
 
 ### Credits:
 * [adi1090x](https://github.com/adi1090x/polybar-themes) -> Polybar Themes
+* [rebelot](https://github.com/rebelot/kanagawa.nvim) -> Kanagawa Color Scheme
+* [addy-dclxvi](https://github.com/addy-dclxvi/Conky-Theme-Collections) -> Some Conky Themes

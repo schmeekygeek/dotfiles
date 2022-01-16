@@ -1,9 +1,45 @@
 #
 # wm independent hotkeys
 #
+
+# move mouse using sxhkd
+KP_Up
+    xdotool mousemove_relative --sync -- 0 -10
+KP_Down
+    xdotool mousemove_relative --sync -- 0 10
+KP_Left
+    xdotool mousemove_relative --sync -- -10 0
+KP_Right
+    xdotool mousemove_relative --sync -- 10 0
+
+KP_Home
+    xdotool mousemove_relative --sync -- -10 -10
+
+KP_Prior
+    xdotool mousemove_relative --sync -- 10 -10
+
+KP_End
+    xdotool mousemove_relative --sync -- -10 10
+
+KP_Next
+    xdotool mousemove_relative --sync -- 10 10
+
+KP_Begin
+    xdotool click 1
+
 # Move window to workspace and switch
 super + shift + {1-5}
     id=$(bspc query -N -n); bspc node -d ^{1-5}; bspc node -f ${id}
+
+# Take screenshot
+super + shift + s
+    flameshot full -p ~/Pictures/screenshots/
+
+# Picom Control
+super + ctrl + p
+  picom
+super + ctrl + shift + p
+  killall picom
 
 # Brightness Control
 XF86MonBrightnessUp
@@ -23,7 +59,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape

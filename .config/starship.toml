@@ -1,5 +1,5 @@
 format = """
- $path$directory$package$git_branch$java
+ $path$directory$package$git_branch
  $character"""
 add_newline = true
 
