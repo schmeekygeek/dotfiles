@@ -20,15 +20,15 @@ if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
     Plug 'hrsh7th/nvim-compe'
     Plug 'mfussenegger/nvim-jdtls'
-    Plug 'morhetz/gruvbox'
     Plug 'onsails/lspkind-nvim'
     Plug 'Shatur/neovim-ayu'
     Plug 'catppuccin/nvim'
     Plug 'kdheepak/tabline.nvim'
     Plug 'tami5/lspsaga.nvim'
-    " Plug 'glepnir/lspsaga.nvim'
     Plug 'rebelot/kanagawa.nvim'
-    Plug 'othree/xml.vim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'olimorris/onedarkpro.nvim'
 endif
 
 call plug#end()

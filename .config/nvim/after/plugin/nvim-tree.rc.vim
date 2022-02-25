@@ -60,4 +60,4 @@ require'nvim-tree'.setup {
   }
 }
 EOF
-nnoremap e :NvimTreeOpen <CR>
+nnoremap <silent> e :NvimTreeOpen <CR>

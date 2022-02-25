@@ -1,50 +1,77 @@
+Alacritty: null
+
 env:
-  # TERM: alacritty
-  TERM: xterm-256color
-  LANG: "en_US.UTF-8"
-  LC_CTYPE: en_US.UTF-8
+  TERM: alacritty
+
+window:
+  opacity: 1
+  padding:
+    x: 25
+    y: 20
+
+    dynamic_padding: true
+
 font:
   normal:
-    # family: "FiraCode NF"
-    family: "Cartograph cf"
-    # family: "JetBrains Mono Medium Nerd Font"
-    # family: "Iosevka Nerd Font"
-    # family: "Source Code Pro"
-    style: Regular
-  size: 9.8
-  use_thin_strokes: true
-background_opacity: 1
-  
-# Kanagawa Alacritty Colors
+    family: Cartograph CF
+
+  bold:
+    family: Cartograph CF
+
+  italic:
+    family: Cartograph CF
+
+  bold_italic:
+    family: Cartograph CF
+
+  size: 9
+
 colors:
+  # Default colors
   primary:
-    background: '0x1f1f28'
-    foreground: '0xdcd7ba'
+    background: '0x1E1D2F'
+    foreground: '0xD9E0EE'
 
+  cursor:
+    text: '0x1E1D2F'
+    cursor: '0xF5E0DC'
+
+  # Normal colors
   normal:
-    black:   '0x090618'
-    red:     '0xc34043'
-    green:   '0x76946a'
-    yellow:  '0xc0a36e'
-    blue:    '0x7e9cd8'
-    magenta: '0x957fb8'
-    cyan:    '0x6a9589'
-    white:   '0xc8c093'
+    black: '0x6E6C7E'
+    red: '0xF28FAD'
+    green: '0xABE9B3'
+    yellow: '0xFAE3B0'
+    blue: '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan: '0x89DCEB'
+    white: '0xD9E0EE'
 
+  # Bright colors
   bright:
-    black:   '0x727169'
-    red:     '0xe82424'
-    green:   '0x98bb6c'
-    yellow:  '0xe6c384'
-    blue:    '0x7fb4ca'
-    magenta: '0x938aa9'
-    cyan:    '0x7aa89f'
-    white:   '0xdcd7ba'
-
-  selection:
-    background: '0x2d4f67'
-    foreground: '0xc8c093'
+    black: '0x988BA2'
+    red: '0xF28FAD'
+    green: '0xABE9B3'
+    yellow: '0xFAE3B0'
+    blue: '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan: '0x89DCEB'
+    white: '0xD9E0EE'
 
   indexed_colors:
-    - { index: 16, color: '0xffa066' }
-    - { index: 17, color: '0xff5d62' }
+    - { index: 16, color: '0xF8BD96' }
+    - { index: 17, color: '0xF5E0DC' }
+
+# cursor:
+#   style: Underline
+#   unfocused_hollow: false
+live_config_reload: true
+
+key_bindings:
+
+  - { key: Key0, mods: Control, action: ResetFontSize }
+
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+theme: Catppuccin

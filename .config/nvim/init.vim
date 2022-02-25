@@ -14,6 +14,7 @@ set relativenumber
 set number
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
+set clipboard+=unnamedplus
 set encoding=utf-8
 set title
 set autoindent
@@ -127,7 +128,7 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=4
 
 "}}}
 
@@ -135,11 +136,11 @@ autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 " ---------------------------------------------------------------------
 runtime ./plug.vim
 if has("unix")
-  let s:uname = system("uname -s")
-  " Do Mac stuff
-  if s:uname == "Darwin\n"
-    runtime ./macos.vim
-  endif
+    let s:uname = system("uname -s")
+    " Do Mac stuff
+    if s:uname == "Darwin\n"
+        runtime ./macos.vim
+    endif
 endif
 
 runtime ./maps.vim
@@ -147,20 +148,42 @@ runtime ./maps.vim
 
 " Mappings "{{{
 " ---------------------------------------------------------------------
-nnoremap gp :silent %!prettier --use-tabs --tab-width=4 --stdin-filepath %<CR>
+nnoremap gp :silent %!prettier --use-tabs --tab-width=2 --stdin-filepath %<CR>
 nnoremap vs :vsplit <CR>
 nnoremap <C-c> <silent> :!pbcopy<CR>
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+nnoremap d "_d
+vnoremap d "_d
+nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
+nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
+nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
+nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+
+" Tabline Mappings
+nnoremap <silent> t :TablineBufferNext<CR>
+nnoremap <silent> T :TablineBufferPrevious<CR>
+
 "}}}
 
+" indent-line"{{{
+" ---------------------------------------------------------------------
+" lua << EOF
+" vim.opt.list = true
+" vim.opt.listchars:append("space:.")
+
+" EOF
+
+"}}}
 augroup BgHighlight
-  autocmd!
-  autocmd WinEnter * set cul
-  autocmd WinLeave * set nocul
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
 augroup END
 
 if &term =~ "screen"
-  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
-  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
+    autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+    autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
 endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
 let g:gruvbox_contrast_dark = 'hard'
