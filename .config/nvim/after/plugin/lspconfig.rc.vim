@@ -30,6 +30,9 @@ nvim_lsp.tsserver.setup {
     }
 
 
+local lsp = require "lspconfig"
+local coq = require "coq"
+
 require'lspconfig'.jdtls.setup{
     \   cmd = { 'jdtls' };
     \   filetypes = {'java'};

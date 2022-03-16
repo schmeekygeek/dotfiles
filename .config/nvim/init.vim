@@ -148,7 +148,7 @@ runtime ./maps.vim
 
 " Mappings "{{{
 " ---------------------------------------------------------------------
-nnoremap gp :silent %!prettier --use-tabs --tab-width=2 --stdin-filepath %<CR>
+nnoremap <silent> gp :silent %!prettier --use-tabs --tab-width=2 --stdin-filepath %<CR>
 nnoremap vs :vsplit <CR>
 nnoremap <C-c> <silent> :!pbcopy<CR>
 noremap <Leader>y "*y
@@ -159,6 +159,8 @@ nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
 nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+nnoremap < <C-x>
+nnoremap > <C-a>
 
 " Tabline Mappings
 nnoremap <silent> t :TablineBufferNext<CR>
@@ -187,5 +189,5 @@ if &term =~ "screen"
 endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme kanagawa
+colorscheme tokyonight
 " vim: set foldmethod=marker foldlevel=0:
