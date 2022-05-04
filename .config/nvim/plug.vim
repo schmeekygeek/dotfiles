@@ -27,7 +27,9 @@ call plug#begin()
         Plug 'lukas-reineke/indent-blankline.nvim'
         Plug 'mattn/emmet-vim'
         Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        Plug 'dart-lang/dart-vim-plugin'
     endif
 
 call plug#end()
+

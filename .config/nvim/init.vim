@@ -159,6 +159,8 @@ nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
 nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+nnoremap <silent> <ALT\++> <Cmd>vertical resize +2<CR>
+nnoremap <silent> - <Cmd>vertical resize -2<CR>
 nnoremap < <C-x>
 nnoremap > <C-a>
 
@@ -177,6 +179,7 @@ nnoremap <silent> T :TablineBufferPrevious<CR>
 " EOF
 
 "}}}
+"
 augroup BgHighlight
     autocmd!
     autocmd WinEnter * set cul
