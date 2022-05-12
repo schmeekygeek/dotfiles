@@ -192,5 +192,6 @@ if &term =~ "screen"
 endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme tokyonight
+colorscheme duskfox
+
 " vim: set foldmethod=marker foldlevel=0:

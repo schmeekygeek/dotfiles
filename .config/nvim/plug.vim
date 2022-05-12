@@ -14,6 +14,7 @@ call plug#begin()
         Plug 'nvim-telescope/telescope.nvim'
         Plug 'kyazdani42/nvim-web-devicons'
         Plug 'kyazdani42/nvim-tree.lua'
+        Plug 'EdenEast/nightfox.nvim'
         Plug 'hoob3rt/lualine.nvim'
         Plug 'hrsh7th/nvim-compe'
         Plug 'mfussenegger/nvim-jdtls'
@@ -25,8 +26,6 @@ call plug#begin()
         Plug 'rebelot/kanagawa.nvim'
         Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
         Plug 'lukas-reineke/indent-blankline.nvim'
-        Plug 'mattn/emmet-vim'
-        Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'dart-lang/dart-vim-plugin'
     endif

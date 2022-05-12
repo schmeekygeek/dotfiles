@@ -4,64 +4,97 @@ env:
   TERM: alacritty
 
 window:
-  opacity: 1
+  opacity: 0.8
   padding:
-    x: 35
+    x: 30
     y: 20
 
-    dynamic_padding: true
+    dynamic_padding: false
 
 font:
   normal:
-    family: FiraCode NF
+    family: JetBrains Mono
     style: Medium
 
   bold:
-    family: FiraCode NF
+    family: JetBrains Mono
 
   italic:
     family: Cartograph CF
 
   bold_italic:
-    family: FiraCode NF
+    family: Cartograph CF
 
   size: 9.1
 
+# colors:
+#   primary:
+#     background: "0x191724"
+#     foreground: "0xe0def4"
+#   cursor:
+#     text: "0xe0def4"
+#     cursor: "0x524f67"
+#   vi_mode_cursor:
+#     text: "0xe0def4"
+#     cursor: "0x524f67"
+#   line_indicator:
+#     foreground: None
+#     background: None
+#   selection:
+#     text: "0xe0def4"
+#     background: "0x403d52"
+#   normal:
+#     black: "0x26233a"
+#     red: "0xeb6f92"
+#     green: "0x31748f"
+#     yellow: "0xf6c177"
+#     blue: "0x9ccfd8"
+#     magenta: "0xc4a7e7"
+#     cyan: "0xebbcba"
+#     white: "0xe0def4"
+#   bright:
+#     black: "0x6e6a86"
+#     red: "0xeb6f92"
+#     green: "0x31748f"
+#     yellow: "0xf6c177"
+#     blue: "0x9ccfd8"
+#     magenta: "0xc4a7e7"
+#     cyan: "0xebbcba"
+#     white: "0xe0def4"
+#   hints:
+#     start:
+#       foreground: "#908caa"
+#       background: "#1f1d2e"
+#     end:
+#       foreground: "#6e6a86"
+#       background: "#1f1d2e"
 colors:
   # Default colors
   primary:
-    background: '#011627'
-    foreground: '#acb4c2'
-
-  cursor:
-    text: '#fafafa'
-    cursor: '#9ca1aa'
-
-  selection:
-    text: '#080808'
-    background: '#b2ceee'
+    background: '0x1b182c'
+    foreground: '0xcbe3e7'
 
   # Normal colors
   normal:
-    black: '#1d3b53'
-    red: '#fc514e'
-    green: '#a1cd5e'
-    yellow: '#e3d18a'
-    blue: '#82aaff'
-    magenta: '#c792ea'
-    cyan: '#7fdbca'
-    white: '#a1aab8'
+    black: '0x100e23'
+    red: '0xff8080'
+    green: '0x95ffa4'
+    yellow: '0xffe9aa'
+    blue: '0x91ddff'
+    magenta: '0xc991e1'
+    cyan: '0xaaffe4'
+    white: '0xcbe3e7'
 
   # Bright colors
   bright:
-    black: '#7c8f8f'
-    red: '#ff5874'
-    green: '#21c7a8'
-    yellow: '#ecc48d'
-    blue: '#82aaff'
-    magenta: '#ae81ff'
-    cyan: '#7fdbca'
-    white: '#d6deeb'
+    black: '0x565575'
+    red: '0xff5458'
+    green: '0x62d196'
+    yellow: '0xffb378'
+    blue: '0x65b2ff'
+    magenta: '0x906cff'
+    cyan: '0x63f2f1'
+    white: '0xa6b3cc'
 
 # cursor:
 #   style: Underline
@@ -75,4 +108,4 @@ key_bindings:
   - { key: Equals, mods: Control, action: IncreaseFontSize }
 
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-theme: Nightfly
+theme: Challenger-Deep

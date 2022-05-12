@@ -27,7 +27,7 @@ alias lla='logo-ls -lah'
 alias ls='logo-ls'
 alias cp='cp -i'
 alias gs='git status'
-alias wp='cd /E/Java/projects/'
+alias wp='cd /E/Java/projects/spring/TODOApplication'
 alias eww='~/.bin/eww'
 alias neofetch-chika='neofetch --source ~/.config/neofetch/asciis/chika'
 alias cls="clear"
@@ -45,8 +45,8 @@ PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 
 # Powerline prompt
-colorscript --exec crunchbang-mini
-# colorscript --exec panes
+# colorscript --exec crunchbang-mini
+colorscript --exec panes
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
