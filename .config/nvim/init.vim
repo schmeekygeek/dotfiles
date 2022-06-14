@@ -8,10 +8,10 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+set termguicolors
+set t_Co=256
 set nocompatible
 set backspace=indent,eol,start
-set relativenumber
-set number
 syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set clipboard+=unnamedplus
@@ -32,10 +32,16 @@ set expandtab
 "let loaded_matchparen = 1
 set shell=bash
 set backupskip=/tmp/*,/private/tmp/*
+let g:sneak#s_next = 1
 
 " incremental substitution (neovim)
 if has('nvim')
   set inccommand=split
+endif
+
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
 " Suppress appending <PasteStart> and <PasteEnd> when pasting
@@ -148,7 +154,7 @@ runtime ./maps.vim
 
 " Mappings "{{{
 " ---------------------------------------------------------------------
-nnoremap <silent> gp :silent %!prettier --use-tabs --tab-width=2 --stdin-filepath %<CR>
+nnoremap <silent> gp :silent %!prettier --tab-width=4 --stdin-filepath %<CR>
 nnoremap vs :vsplit <CR>
 nnoremap <C-c> <silent> :!pbcopy<CR>
 noremap <Leader>y "*y
@@ -163,6 +169,9 @@ nnoremap <silent> <ALT\++> <Cmd>vertical resize +2<CR>
 nnoremap <silent> - <Cmd>vertical resize -2<CR>
 nnoremap < <C-x>
 nnoremap > <C-a>
+map <f98> <Plug>Sneak_n
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 " Tabline Mappings
 nnoremap <silent> t :TablineBufferNext<CR>
@@ -172,11 +181,20 @@ nnoremap <silent> T :TablineBufferPrevious<CR>
 
 " indent-line"{{{
 " ---------------------------------------------------------------------
-" lua << EOF
-" vim.opt.list = true
-" vim.opt.listchars:append("space:.")
+lua << EOF
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
 
-" EOF
+-- require('onedark').setup {
+--    style = 'deep'
+-- }
+-- require('onedark').load()
+
+require("indent_blankline").setup {
+    show_end_of_line = true,
+    space_char_blankline = " ",
+}
+EOF
 
 "}}}
 "
@@ -191,7 +209,8 @@ if &term =~ "screen"
     autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
 endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme duskfox
+" let g:gruvbox_contrast_dark = 'deep'
+set termguicolors
+colorscheme onedark
 
 " vim: set foldmethod=marker foldlevel=0:

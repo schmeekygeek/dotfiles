@@ -27,7 +27,9 @@ call plug#begin()
         Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
         Plug 'lukas-reineke/indent-blankline.nvim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        " Plug 'navarasu/onedark.nvim' 
         Plug 'dart-lang/dart-vim-plugin'
+        Plug 'justinmk/vim-sneak'
     endif
 
 call plug#end()

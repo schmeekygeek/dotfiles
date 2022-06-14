@@ -20,6 +20,7 @@ if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[autocmd! * <buffer>]]
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
     vim.api.nvim_command [[augroup END]]
+    vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
 end
 
 end
@@ -33,12 +34,13 @@ nvim_lsp.tsserver.setup {
 local lsp = require "lspconfig"
 
 require'lspconfig'.jdtls.setup{
-    \   cmd = { 'jdtls' };
-    \   filetypes = {'java'};
-    \   root_dir = function(fname)
-    \      return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
-    \   end
-    \}
+  \   on_attach = on_attach;
+  \   cmd = { 'jdtls' };
+  \   filetypes = {'java'};
+  \   root_dir = function(fname)
+  \      return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
+  \   end
+  \}
 
 require('lspkind').init({
 -- enables text annotations

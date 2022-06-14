@@ -13,6 +13,9 @@
 
 ### Gallery
 
+#### SAGA
+![screenshot](screenshots/SAGA.png)
+
 #### Kanagawa
 ![screenshot](screenshots/Kanagawa.jpg)
 
@@ -20,10 +23,12 @@
 ![screenshot](screenshots/screenshot2.jpg)
 ![screenshot](screenshots/screenshot3.jpg)
 
-#### Old Old
+#### Very Old
 ![screenshot](screenshots/screenshot1.jpg)
 
 ### Credits:
 * [adi1090x](https://github.com/adi1090x/polybar-themes) -> Polybar Themes
 * [rebelot](https://github.com/rebelot/kanagawa.nvim) -> Kanagawa Color Scheme
+* [Miusaky](https://github.com/Miusaky) -> SAGA Color Scheme
 * [addy-dclxvi](https://github.com/addy-dclxvi/Conky-Theme-Collections) -> Some Conky Themes
+* [Deathmonic](https://github.com/Deathemonic/Cat-Dots) -> Stolen and Modified polybar :D

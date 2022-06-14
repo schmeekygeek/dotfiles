@@ -1,10 +1,8 @@
-Alacritty: null
-
 env:
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
-  opacity: 0.8
+  opacity: 1
   padding:
     x: 30
     y: 20
@@ -13,19 +11,19 @@ window:
 
 font:
   normal:
-    family: JetBrains Mono
-    style: Medium
+    family: Cartograph CF
 
   bold:
-    family: JetBrains Mono
+    family: Cartograph CF
+    style: Regular
 
   italic:
-    family: Cartograph CF
+    family: FiraCode NF
 
   bold_italic:
-    family: Cartograph CF
+    family: FiraCode NF
 
-  size: 9.1
+  size: 10.5
 
 # colors:
 #   primary:
@@ -71,34 +69,35 @@ font:
 colors:
   # Default colors
   primary:
-    background: '0x1b182c'
-    foreground: '0xcbe3e7'
-
+    background: '#0f0f17'
+    foreground: '#bfc9db'
+    
   # Normal colors
   normal:
-    black: '0x100e23'
-    red: '0xff8080'
-    green: '0x95ffa4'
-    yellow: '0xffe9aa'
-    blue: '0x91ddff'
-    magenta: '0xc991e1'
-    cyan: '0xaaffe4'
-    white: '0xcbe3e7'
+    black:   '#1a1826'
+    red:     '#d78787'
+    green:   '#afbea2'
+    yellow:  '#e4c9af'
+    blue:    '#a1bdce'
+    magenta: '#c98bbf'
+    cyan:    '#a1bdce'
+    white:   '#b1b9c7'
 
   # Bright colors
   bright:
-    black: '0x565575'
-    red: '0xff5458'
-    green: '0x62d196'
-    yellow: '0xffb378'
-    blue: '0x65b2ff'
-    magenta: '0x906cff'
-    cyan: '0x63f2f1'
-    white: '0xa6b3cc'
+    black:   '0x988BA2'
+    red:     '0xF28FAD'
+    green:   '0xABE9B3'
+    yellow:  '0xFAE3B0'
+    blue:    '0x96CDFB'
+    magenta: '0xF5C2E7'
+    cyan:    '0x89DCEB'
+    white:   '#d2d3c9'
 
-# cursor:
-#   style: Underline
-#   unfocused_hollow: false
+  indexed_colors:
+    - { index: 16, color: '#e0b089' }
+    - { index: 17, color: '#bfc9db' }
+
 live_config_reload: true
 
 key_bindings:
@@ -108,4 +107,3 @@ key_bindings:
   - { key: Equals, mods: Control, action: IncreaseFontSize }
 
   - { key: Minus, mods: Control, action: DecreaseFontSize }
-theme: Challenger-Deep

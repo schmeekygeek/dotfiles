@@ -1,8 +1,15 @@
+sxhkd
 #
 # wm independent hotkeys
 #
 
+# eww Dashboard
 # move mouse using sxhkd
+super + e
+    eww open dashboard
+super + shift + q
+    eww close-all
+
 KP_Up
     xdotool mousemove_relative --sync -- 0 -10
 KP_Down
@@ -37,9 +44,9 @@ super + shift + s
 
 # Picom Control
 super + ctrl + p
-  picom
+    picom
 super + ctrl + shift + p
-  killall picom
+    killall picom
 
 # Brightness Control
 XF86MonBrightnessUp
@@ -55,12 +62,14 @@ XF86AudioLowerVolume
 	
 # terminal emulator
 super + Return
-	alacritty
+    alacritty
 
 # program launcher
 super + @space
-	rofi -show drun
-
+    sh ~/.config/rofi/bin/launcher
+super + q
+    ~/.config/rofi/bin/powermenu
+#
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
