@@ -26,8 +26,9 @@
 #### Very Old
 ![screenshot](screenshots/screenshot1.jpg)
 
-### Credits:
+### Credits and Resources:
 * [adi1090x](https://github.com/adi1090x/polybar-themes) -> Polybar Themes
+* [adi1090x](https://github.com/archcraft-os/archcraft-berry) -> Rofi and Powermenu script
 * [rebelot](https://github.com/rebelot/kanagawa.nvim) -> Kanagawa Color Scheme
 * [Miusaky](https://github.com/Miusaky) -> SAGA Color Scheme
 * [addy-dclxvi](https://github.com/addy-dclxvi/Conky-Theme-Collections) -> Some Conky Themes
