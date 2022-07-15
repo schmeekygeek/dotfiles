@@ -1,6 +1,6 @@
 require'tabline'.setup {
       -- Defaults configuration options
-    enable = false,
+    enable = true,
         options = {
         section_separators = {'', ''},
         component_separators = {'', ''},

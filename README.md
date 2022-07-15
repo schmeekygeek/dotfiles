@@ -13,6 +13,9 @@
 
 ### Gallery
 
+#### Rose Pine
+![screenshot](screenshots/Rose-Pine.jpg)
+
 #### SAGA
 ![screenshot](screenshots/SAGA.png)
 

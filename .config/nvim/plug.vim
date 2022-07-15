@@ -5,7 +5,7 @@ endif
 call plug#begin()
 
     if has("nvim")
-
+        Plug 'tpope/vim-fugitive'
         Plug 'cohama/lexima.vim'
         Plug 'tpope/vim-commentary'
         Plug 'neovim/nvim-lspconfig'
@@ -30,6 +30,7 @@ call plug#begin()
         " Plug 'navarasu/onedark.nvim' 
         Plug 'dart-lang/dart-vim-plugin'
         Plug 'justinmk/vim-sneak'
+        Plug 'rose-pine/neovim'
     endif
 
 call plug#end()

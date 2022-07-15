@@ -1,22 +1,17 @@
 configuration {
 	modi:				"drun";
-	font:				"Rubik 10";
+	font:				"VictorMonoNerdFont Italic 12";
 	display-drun: 			"";
-	sidebar-mode: 			true;
-}
-configuration {
-	modi:				"filebrowser";
-	font:				"Cartograph cf 13";
-	display-drun: 			"";
-	sidebar-mode: 			true;
+	drun-display-format:            "{name}";
+	sidebar-mode: 			false;
 }
 
 @theme "/dev/null"
 
 * {
-	bg:				#BF616A;
-	fg:				#2b2b2b;
-	button:				#EBCB8B;
+	bg:				#061115;
+	fg:				#d9d7d6;
+	button:				#0b151a;
 
 	background-color:		@bg;
 	text-color:			@fg;
@@ -24,62 +19,53 @@ configuration {
 
 window {
 	transparency:                   "real";
-	border-radius:                  7px;
 	width:			    	40%;
-	y-offset:                       10px;
-	padding: 			20px;
-	location: 			south;
 }
 
 prompt { enabled: false; }
 
 entry {
-	placeholder:			"Pwease search, Senpai >~<\"\"";
+	placeholder:			"Search";
+	placeholder-color:              @fg;
 	expand:                         true;
-	padding:                        5px 2% 5px 2%;
-	background-color:               @button;
-        placeholder-color:              @fg;
+	padding:                        1.5%;
+	border-radius:			8px;
 }
 
 inputbar {
 	children: 			[ prompt, entry ];
-	background-color:               @button;
-	text-color:                     @fg;
+	background-image:               url("img/bg.png");
 	expand:                         false;
-	border-radius:                  6px;
-	padding:                        8px;
+	border-radius:                  0px 0 8px 8px;
+	padding:                        100px 30px 30px 300px;
 }
 
 listview {
 	columns:                        1;
-	lines:	                        8;
+	lines:	                        4;
 	cycle:                          false;
 	dynamic:                        true;
 	layout:                         vertical;
+	padding:			30px 200px 30px 30px;
 }
 
-mainbox {
-	children:                       [ inputbar, listview ];
-	spacing:                       	2%;
-	padding:                        2% 1% 2% 1%;
-}
+mainbox { children: [ inputbar, listview ]; }
 
 element {
 	orientation:                    vertical;
-	border-radius:                  0%;
-	padding:                        1.5% 0% 1.5% 1.5%;
+	padding:                        1.5% 0% 1.5% 0%;
+	border-radius:			8px;
 }
 
 element-text {
 	expand:                         true;
 	vertical-align:                 0.5;
 	margin:                         0.5% 3% 0% 3%;
-	background-color:               inherit;
-        text-color:                     inherit;
+	background-color: 		inherit;
+	text-color:       		inherit;
 }
 
 element selected {
-	background-color:               @fg;
-	text-color:                     @bg;
-	border-radius:                  6px;
+	background-color:               @button;
+	border-radius:                  8px;
 }
