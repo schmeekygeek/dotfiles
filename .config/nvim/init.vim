@@ -8,6 +8,8 @@ scriptencoding utf-8
 " stop loading config if it's on tiny or small
 if !1 | finish | endif
 
+set number
+set relativenumber
 set termguicolors
 set t_Co=256
 set nocompatible
@@ -183,7 +185,7 @@ nnoremap <silent> T :TablineBufferPrevious<CR>
 " ---------------------------------------------------------------------
 lua << EOF
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("space: ")
 
 -- require('onedark').setup {
 --    style = 'deep'
@@ -211,6 +213,8 @@ endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
 " let g:gruvbox_contrast_dark = 'deep'
 set termguicolors
-colorscheme onedark
+
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+colorscheme rose-pine
 
 " vim: set foldmethod=marker foldlevel=0:

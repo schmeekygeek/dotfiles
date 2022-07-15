@@ -5,98 +5,99 @@ window:
   opacity: 1
   padding:
     x: 30
-    y: 20
+    y: 15
 
     dynamic_padding: false
 
 font:
   normal:
-    family: Cartograph CF
+    family: Jetbrains Mono
+    # family: Victor Mono Nerd Font
 
   bold:
-    family: Cartograph CF
-    style: Regular
+    family: Jetbrains Mono
 
   italic:
-    family: FiraCode NF
+    family: Victor Mono Nerd Font
 
   bold_italic:
-    family: FiraCode NF
+    family: Victor Mono Nerd Font
 
-  size: 10.5
+  size: 10
+
+colors:
+  primary:
+    background: "0x191724"
+    foreground: "0xe0def4"
+  cursor:
+    text: "0xe0def4"
+    cursor: "0x524f67"
+  vi_mode_cursor:
+    text: "0xe0def4"
+    cursor: "0x524f67"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0xe0def4"
+    background: "0x403d52"
+  normal:
+    black: "0x26233a"
+    red: "0xeb6f92"
+    green: "0x31748f"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xebbcba"
+    white: "0xe0def4"
+  bright:
+    black: "0x6e6a86"
+    red: "0xeb6f92"
+    green: "0x31748f"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xebbcba"
+    white: "0xe0def4"
+  hints:
+    start:
+      foreground: "#908caa"
+      background: "#1f1d2e"
+    end:
+      foreground: "#6e6a86"
+      background: "#1f1d2e"
 
 # colors:
+#   # Default colors
 #   primary:
-#     background: "0x191724"
-#     foreground: "0xe0def4"
-#   cursor:
-#     text: "0xe0def4"
-#     cursor: "0x524f67"
-#   vi_mode_cursor:
-#     text: "0xe0def4"
-#     cursor: "0x524f67"
-#   line_indicator:
-#     foreground: None
-#     background: None
-#   selection:
-#     text: "0xe0def4"
-#     background: "0x403d52"
-#   normal:
-#     black: "0x26233a"
-#     red: "0xeb6f92"
-#     green: "0x31748f"
-#     yellow: "0xf6c177"
-#     blue: "0x9ccfd8"
-#     magenta: "0xc4a7e7"
-#     cyan: "0xebbcba"
-#     white: "0xe0def4"
-#   bright:
-#     black: "0x6e6a86"
-#     red: "0xeb6f92"
-#     green: "0x31748f"
-#     yellow: "0xf6c177"
-#     blue: "0x9ccfd8"
-#     magenta: "0xc4a7e7"
-#     cyan: "0xebbcba"
-#     white: "0xe0def4"
-#   hints:
-#     start:
-#       foreground: "#908caa"
-#       background: "#1f1d2e"
-#     end:
-#       foreground: "#6e6a86"
-#       background: "#1f1d2e"
-colors:
-  # Default colors
-  primary:
-    background: '#0f0f17'
-    foreground: '#bfc9db'
+#     background: '#0f0f17'
+#     foreground: '#bfc9db'
     
-  # Normal colors
-  normal:
-    black:   '#1a1826'
-    red:     '#d78787'
-    green:   '#afbea2'
-    yellow:  '#e4c9af'
-    blue:    '#a1bdce'
-    magenta: '#c98bbf'
-    cyan:    '#a1bdce'
-    white:   '#b1b9c7'
+#   # Normal colors
+#   normal:
+#     black:   '#1a1826'
+#     red:     '#d78787'
+#     green:   '#afbea2'
+#     yellow:  '#e4c9af'
+#     blue:    '#a1bdce'
+#     magenta: '#c98bbf'
+#     cyan:    '#a1bdce'
+#     white:   '#b1b9c7'
 
-  # Bright colors
-  bright:
-    black:   '0x988BA2'
-    red:     '0xF28FAD'
-    green:   '0xABE9B3'
-    yellow:  '0xFAE3B0'
-    blue:    '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan:    '0x89DCEB'
-    white:   '#d2d3c9'
+#   # Bright colors
+#   bright:
+#     black:   '0x988BA2'
+#     red:     '0xF28FAD'
+#     green:   '0xABE9B3'
+#     yellow:  '0xFAE3B0'
+#     blue:    '0x96CDFB'
+#     magenta: '0xF5C2E7'
+#     cyan:    '0x89DCEB'
+#     white:   '#d2d3c9'
 
-  indexed_colors:
-    - { index: 16, color: '#e0b089' }
-    - { index: 17, color: '#bfc9db' }
+#   indexed_colors:
+#     - { index: 16, color: '#e0b089' }
+#     - { index: 17, color: '#bfc9db' }
 
 live_config_reload: true
 
