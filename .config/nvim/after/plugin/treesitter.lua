@@ -1,27 +1,6 @@
-if !exists('g:loaded_nvim_treesitter')
-  finish
-endif
-
-"lua <<EOF
-"require 'nvim-treesitter.configs'.setup {
-"    sync_install = false,
-"    highlight = {
-"        enable = true,
-"        disable = {},
-"    },
-"        indent = {
-"        enable = false,
-"        disable = {},
-"    },
-"        ensure_installed = {
-"        "java"
-"        }
-"    }
-"EOF
-lua <<EOF
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "all",
+  ensure_installed = { "dart", "java", "markdown", "yaml", "typescript" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -43,4 +22,3 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
-EOF

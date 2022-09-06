@@ -6,6 +6,16 @@ call plug#begin()
 
     if has("nvim")
         Plug 'tpope/vim-fugitive'
+        Plug 'akinsho/flutter-tools.nvim'
+        " completion plugins
+        Plug 'hrsh7th/cmp-nvim-lsp'
+        Plug 'hrsh7th/cmp-buffer'
+        Plug 'hrsh7th/cmp-path'
+        Plug 'hrsh7th/cmp-cmdline'
+        Plug 'hrsh7th/nvim-cmp'
+        Plug 'hrsh7th/vim-vsnip'
+        Plug 'hrsh7th/vim-vsnip-integ'
+        " end
         Plug 'cohama/lexima.vim'
         Plug 'tpope/vim-commentary'
         Plug 'neovim/nvim-lspconfig'
@@ -14,9 +24,7 @@ call plug#begin()
         Plug 'nvim-telescope/telescope.nvim'
         Plug 'kyazdani42/nvim-web-devicons'
         Plug 'kyazdani42/nvim-tree.lua'
-        Plug 'EdenEast/nightfox.nvim'
         Plug 'hoob3rt/lualine.nvim'
-        Plug 'hrsh7th/nvim-compe'
         Plug 'mfussenegger/nvim-jdtls'
         Plug 'onsails/lspkind-nvim'
         Plug 'Shatur/neovim-ayu'
@@ -24,7 +32,6 @@ call plug#begin()
         Plug 'kdheepak/tabline.nvim'
         Plug 'tami5/lspsaga.nvim'
         Plug 'rebelot/kanagawa.nvim'
-        Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
         Plug 'lukas-reineke/indent-blankline.nvim'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         " Plug 'navarasu/onedark.nvim' 

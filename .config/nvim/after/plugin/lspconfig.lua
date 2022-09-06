@@ -1,8 +1,3 @@
-if !exists('g:lspconfig')
-    finish
-endif
-
-lua <<EOF
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
 
@@ -33,14 +28,18 @@ nvim_lsp.tsserver.setup {
 
 local lsp = require "lspconfig"
 
+-- jdtls config
 require'lspconfig'.jdtls.setup{
-  \   on_attach = on_attach;
-  \   cmd = { 'jdtls' };
-  \   filetypes = {'java'};
-  \   root_dir = function(fname)
-  \      return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
-  \   end
-  \}
+    on_attach = on_attach;
+    cmd = { 'jdtls' };
+    filetypes = {'java'};
+    root_dir = function(fname)
+       return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
+    end
+}
+
+-- flutter config
+require("flutter-tools").setup{}
 
 require('lspkind').init({
 -- enables text annotations
@@ -86,4 +85,3 @@ symbol_map = {
     TypeParameter = ""
     },
 })
-EOF

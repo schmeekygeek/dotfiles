@@ -81,7 +81,7 @@ noremap! <C-h> <C-w>
 
 " Auto-Completion "{{{
 " ---------------------------------------------------------------------
-set completeopt=menuone
+set completeopt=menu,menuone,noselect
 let g:compe = {}
 let g:compe.enabled = v:true
 let g:compe.autocomplete = v:true
@@ -113,8 +113,12 @@ inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 "}}}
 
@@ -137,6 +141,7 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=4
+autocmd FileType dart setlocal shiftwidth=2 tabstop=2
 
 "}}}
 
@@ -157,6 +162,7 @@ runtime ./maps.vim
 " Mappings "{{{
 " ---------------------------------------------------------------------
 nnoremap <silent> gp :silent %!prettier --tab-width=4 --stdin-filepath %<CR>
+nnoremap <silent> e :NvimTreeOpen <CR>
 nnoremap vs :vsplit <CR>
 nnoremap <C-c> <silent> :!pbcopy<CR>
 noremap <Leader>y "*y
@@ -191,7 +197,6 @@ vim.opt.listchars:append("space: ")
 --    style = 'deep'
 -- }
 -- require('onedark').load()
-
 require("indent_blankline").setup {
     show_end_of_line = true,
     space_char_blankline = " ",
