@@ -33,11 +33,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
-quotes
-xset r rate 210 35 &
-xset -b &
+# quotes
+xset -b r rate 210 35 &
+setxkbmap dvorak &
 nitrogen --restore &
-picom &
-polybar &
+# picom &
+# polybar main &
+# polybar bar &
+# polybar menu &
 exec bspwm &
 exec sxhkd 

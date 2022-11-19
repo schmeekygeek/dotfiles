@@ -17,46 +17,18 @@ if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup END]]
     vim.api.nvim_set_keymap('i', '<cr>', 'compe#confirm("<cr>")', { expr = true })
 end
-
 end
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" }
-    }
-
-
-local lsp = require "lspconfig"
-
--- jdtls config
-require'lspconfig'.jdtls.setup{
-    on_attach = on_attach;
-    cmd = { 'jdtls' };
-    filetypes = {'java'};
-    root_dir = function(fname)
-       return require'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
-    end
 }
 
--- flutter config
+local lsp = require "lspconfig"
 require("flutter-tools").setup{}
-
 require('lspkind').init({
--- enables text annotations
---
--- default: true
 mode = 'symbol_text',
-
--- default symbol map
--- can be either 'default' (requires nerd-fonts font) or
--- 'codicons' for codicon preset (requires vscode-codicons font)
---
--- default: 'default'
 preset = 'codicons',
-
--- override preset symbols
---
--- default: {}
 symbol_map = {
     Text = "",
     Method = "",

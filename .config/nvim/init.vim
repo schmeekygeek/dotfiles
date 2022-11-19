@@ -32,6 +32,7 @@ set laststatus=2
 set scrolloff=10
 set expandtab
 "let loaded_matchparen = 1
+set termguicolors
 set shell=bash
 set backupskip=/tmp/*,/private/tmp/*
 let g:sneak#s_next = 1
@@ -173,7 +174,7 @@ nnoremap <silent> ;f <Cmd>Telescope find_files<CR>
 nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
 nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
 nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
-nnoremap <silent> <ALT\++> <Cmd>vertical resize +2<CR>
+nnoremap <silent> + <Cmd>vertical resize +2<CR>
 nnoremap <silent> - <Cmd>vertical resize -2<CR>
 nnoremap < <C-x>
 nnoremap > <C-a>
@@ -184,7 +185,8 @@ map F <Plug>Sneak_S
 " Tabline Mappings
 nnoremap <silent> t :TablineBufferNext<CR>
 nnoremap <silent> T :TablineBufferPrevious<CR>
-
+" BDelete mapping S-X
+nnoremap <silent> X <Cmd>bdelete<CR>
 "}}}
 
 " indent-line"{{{
@@ -217,9 +219,8 @@ if &term =~ "screen"
 endif
 " autocmd vimenter * ++nested colorscheme ayu-mirage
 " let g:gruvbox_contrast_dark = 'deep'
-set termguicolors
 
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
-colorscheme rose-pine
+colorscheme catppuccin
 
 " vim: set foldmethod=marker foldlevel=0:
