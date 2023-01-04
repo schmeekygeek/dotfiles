@@ -1,0 +1,7 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "a sample project to test neovim lsp",
+  "main": "index.ts",
+  "license": "MIT"
+}
