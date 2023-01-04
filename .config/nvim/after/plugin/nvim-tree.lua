@@ -42,7 +42,7 @@ require'nvim-tree'.setup {
   view = {
     width = 30,
     hide_root_folder = false,
-    side = 'right',
+    side = 'left',
     mappings = {
       custom_only = false,
       list = {}

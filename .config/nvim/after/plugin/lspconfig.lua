@@ -10,7 +10,7 @@ local opts = { noremap = true, silent = true }
 
 buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
-if client.resolved_capabilities.document_formatting then
+if client.server_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
@@ -21,7 +21,18 @@ end
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
-    filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" }
+    filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx"},
+}
+
+nvim_lsp.astro.setup{
+    filetypes = { "astro" },
+    cmd = { "astro-ls", "--stdio" },
+    init_options = {
+        configuration = {},
+        typescript = {
+            serverPath = "",
+        },
+    },
 }
 
 local lsp = require "lspconfig"
