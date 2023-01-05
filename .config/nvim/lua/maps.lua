@@ -24,3 +24,9 @@ keymap.set('n', '-', '<C-w><')
 -- Ctrl backspace
 keymap.set('i', '<C-BS>', '<C-w>', { noremap = true })
 keymap.set('i', '<C-h>', '<C-w>', { noremap = true })
+
+-- Nvim tree
+keymap.set('n', 'e', ':NvimTreeOpen<Return>', { silent = true })
+
+-- Buffers
+keymap.set('n', 'X', ':bdelete<Return>', { silent = true })

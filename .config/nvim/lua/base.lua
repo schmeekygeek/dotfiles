@@ -1,4 +1,3 @@
-vim.cmd('autocmd!')
 vim.opt.fileencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.wo.relativenumber = true
@@ -39,3 +38,10 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- File specific tabstops and shiftwidths
+-- java
+vim.cmd "autocmd FileType java setlocal shiftwidth=4 tabstop=4"
+
+-- Colorscheme
+vim.cmd "colorscheme rose-pine"

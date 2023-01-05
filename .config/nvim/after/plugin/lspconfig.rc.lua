@@ -12,6 +12,10 @@ local on_attach = function(client, bufnr)
   end
 end
 
+vim.diagnostic.config({
+  signs = false,
+})
+
 -- typescript language server
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
