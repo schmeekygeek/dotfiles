@@ -2,29 +2,29 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 1
+  opacity: 0.84
   padding:
     x: 30
-    y: 15
+    y: 10
 
-    dynamic_padding: false
+    dynamic_padding: true
 
 font:
   normal:
-    family: Jetbrains Mono
-    # family: Victor Mono Nerd Font
+    family: CozetteVector
 
   bold:
-    family: Jetbrains Mono
+    family: CozetteVector
 
   italic:
-    family: Victor Mono Nerd Font
+    family: CozetteVector
 
   bold_italic:
-    family: Victor Mono Nerd Font
+    family: CozetteVector
 
-  size: 10
+  size: 15.4
 
+# rose pine theme
 colors:
   primary:
     background: "0x191724"
@@ -67,12 +67,12 @@ colors:
       foreground: "#6e6a86"
       background: "#1f1d2e"
 
+# SAGA theme
 # colors:
 #   # Default colors
 #   primary:
 #     background: '#0f0f17'
 #     foreground: '#bfc9db'
-    
 #   # Normal colors
 #   normal:
 #     black:   '#1a1826'
@@ -83,7 +83,6 @@ colors:
 #     magenta: '#c98bbf'
 #     cyan:    '#a1bdce'
 #     white:   '#b1b9c7'
-
 #   # Bright colors
 #   bright:
 #     black:   '0x988BA2'
@@ -94,12 +93,10 @@ colors:
 #     magenta: '0xF5C2E7'
 #     cyan:    '0x89DCEB'
 #     white:   '#d2d3c9'
-
 #   indexed_colors:
 #     - { index: 16, color: '#e0b089' }
 #     - { index: 17, color: '#bfc9db' }
-
-live_config_reload: true
+# live_config_reload: true
 
 key_bindings:
 
