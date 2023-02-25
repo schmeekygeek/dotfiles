@@ -8,7 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Packer itself
-  use({'rose-pine/neovim', as = 'rose-pine'})
+  use('rose-pine/neovim')
   use 'hoob3rt/lualine.nvim'                                          -- Lualine
   use 'neovim/nvim-lspconfig'                                         -- LSP
   use 'onsails/lspkind-nvim'                                          -- vscode-like pictograms
@@ -29,4 +29,9 @@ packer.startup(function(use)
   use 'dart-lang/dart-vim-plugin'                                     -- Dart plugin for neovim
   use 'kylechui/nvim-surround'                                        -- Surround plugin
   use 'nvim-tree/nvim-tree.lua'                                       -- Nvim-tree for files
+  use 'williamboman/mason.nvim'                                       -- mason
+  use 'williamboman/mason-lspconfig.nvim'                             -- mason lspconfig
+  use 'ggandor/leap.nvim'                                             -- mason lspconfig
+  use 'rebelot/kanagawa.nvim'                                         -- kanagawa color scheme
+  use 'theprimeagen/vim-be-good'                                      -- plugin to practice vim
 end)

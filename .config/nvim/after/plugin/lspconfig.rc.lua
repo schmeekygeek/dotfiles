@@ -1,7 +1,14 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
+
 local protocol = require('vim.lsp.protocol')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local status, mason = pcall(require, 'mason')
+local masonlsp = require('mason-lspconfig')
+if (not status) then return end
+
+mason.setup()
+masonlsp.setup()
 
 local on_attach = function(client, bufnr)
   if client.server_capabilities.documentFormattingProvider then
@@ -30,3 +37,8 @@ require('lspconfig')['jdtls'].setup {
 
 -- dart language server
 require("flutter-tools").setup{}
+
+-- astro language server
+nvim_lsp.astro.setup{}
+--tailwindcss language server
+nvim_lsp.tailwindcss.setup{}
