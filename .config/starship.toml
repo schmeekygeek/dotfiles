@@ -1,6 +1,6 @@
 format = """
-$path$directory$package$git_branch$cmd_duration
-$character"""
+$path$directory$package(normal)$git_branch$cmd_duration$java
+$character[](green)[](cyan)[](yellow) """
 
 add_newline = true
 
@@ -11,14 +11,14 @@ disabled = false
 [directory]
 truncation_length = 3
 truncation_symbol = ".../"
-style = "bold cyan"
+style = "cyan"
 read_only = "🔒"
 format = "[$path]($style)[$read_only]($read_only_style) "
 
 [character]
-success_symbol = "[▶](bold green)"
-error_symbol = "[✗](bold red)"
+success_symbol = "[❤ ](bold green)"
+error_symbol = "[✗](red)"
 
 [cmd_duration]
 min_time = 2000
-format = "took [$duration](bold yellow)"
+format = "took [$duration](yellow)"
