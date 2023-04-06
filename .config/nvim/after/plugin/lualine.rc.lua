@@ -1,5 +1,5 @@
 local status, lualine = pcall(require, 'lualine')
-if (not status) then print("lualine not installed") end
+if (not status) then print("lualine not installed") return end
 
 local colors = {
   bg       = '#202328',

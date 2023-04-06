@@ -1,31 +1,32 @@
 vim.wo.relativenumber = true
 vim.wo.number = true
 
-vim.opt.colorcolumn = "80"
-vim.opt.fileencoding = 'utf-8'
-vim.opt.encoding = 'utf-8'
-vim.opt.title = true
-vim.opt.autoindent = true
-vim.opt.hlsearch = true
-vim.opt.backup = false
-vim.opt.showcmd = true
-vim.opt.cmdheight = 1
-vim.opt.laststatus = 2
-vim.opt.expandtab = true
-vim.opt.scrolloff = 10
-vim.opt.shell = 'bash'
-vim.opt.backupskip = '/tmp/*,/private/tmp/*'
-vim.opt.inccommand = 'split'
-vim.opt.ignorecase = true
-vim.opt.breakindent = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.ai = true --Auto indent
-vim.opt.si = true --Smart indent
-vim.opt.wrap = false
-vim.opt.backspace = 'start,eol,indent'
-vim.opt.path:append { '**' } -- finding files - Search down into subfolders
-vim.opt.wildignore:append { '*/node_modules/*' }
+opt = vim.opt
+opt.colorcolumn = "80"
+opt.fileencoding = 'utf-8'
+opt.encoding = 'utf-8'
+opt.title = true
+opt.autoindent = true
+opt.hlsearch = true
+opt.backup = false
+opt.showcmd = true
+opt.cmdheight = 1
+opt.laststatus = 2
+opt.expandtab = true
+opt.scrolloff = 10
+opt.shell = 'bash'
+opt.backupskip = '/tmp/*,/private/tmp/*'
+opt.inccommand = 'split'
+opt.ignorecase = true
+opt.breakindent = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.ai = true --Auto indent
+opt.si = true --Smart indent
+opt.wrap = false
+opt.backspace = 'start,eol,indent'
+opt.path:append { '**' } -- finding files - Search down into subfolders
+opt.wildignore:append { '*/node_modules/*' }
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\[4:3m"]])
@@ -37,7 +38,7 @@ vim.cmd([[let &t_Ce = "\[4:0m"]])
 -- });
 
 -- Add asterisks in block comments
-vim.opt.formatoptions:append { 'r' }
+opt.formatoptions:append { 'r' }
 
 -- File specific tabstops and shiftwidths
 -- java
@@ -45,3 +46,6 @@ vim.cmd "autocmd FileType java setlocal shiftwidth=4 tabstop=4"
 
 -- Colorscheme
 vim.cmd "colorscheme rose-pine"
+
+-- Disable mouse
+vim.api.nvim_set_option("mouse", "")
