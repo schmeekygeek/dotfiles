@@ -24,11 +24,9 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'                                 -- telescope 
   use 'kyazdani42/nvim-web-devicons'                                  -- web devicons
   use 'akinsho/nvim-bufferline.lua'                                   -- bufferline
-  use 'glepnir/lspsaga.nvim'                                          -- useful uis for lsp
   use 'akinsho/flutter-tools.nvim'                                    -- flutter development tools
   use 'dart-lang/dart-vim-plugin'                                     -- Dart plugin for neovim
   use 'kylechui/nvim-surround'                                        -- Surround plugin
-  use 'nvim-tree/nvim-tree.lua'                                       -- Nvim-tree for files
   use 'williamboman/mason.nvim'                                       -- mason
   use 'williamboman/mason-lspconfig.nvim'                             -- mason lspconfig
   use 'ggandor/leap.nvim'                                             -- mason lspconfig

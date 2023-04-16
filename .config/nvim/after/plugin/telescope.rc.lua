@@ -46,6 +46,7 @@ vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
+      theme = "ivy",
       hidden = true
     })
   end)
@@ -73,6 +74,6 @@ vim.keymap.set("n", "sf", function()
     grouped = true,
     previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 40 }
+    layout_config = { height = 70 }
   })
 end)

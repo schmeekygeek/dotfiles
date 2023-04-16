@@ -4,8 +4,6 @@ if (not status) then return end
 nvim_tree.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
@@ -19,7 +17,7 @@ nvim_tree.setup {
     }
   },
   update_focused_file = {
-    enable      = false,
+    enable      = true,
     update_cwd  = false,
     ignore_list = {}
   },
@@ -29,15 +27,15 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
+    width = 40,
     hide_root_folder = false,
     side = 'left',
     mappings = {
       custom_only = false,
       list = {}
     },
-    number = false,
-    relativenumber = false
+    number = true,
+    relativenumber = true
   },
   trash = {
     cmd = "trash",

@@ -11,12 +11,22 @@ mason.setup()
 masonlsp.setup()
 
 local on_attach = function(client, bufnr)
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+  -- Mappings.
+  local opts = { noremap = true, silent = true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  keymap.set('n', 'gD', vim.lsp.buf.declaration(), opts)
+  keymap.set('n', 'gi', vim.lsp.buf.implementation(), opts)
+  keymap.set('n', 'gd', vim.lsp.buf.definition(), opts)
+  keymap.set('n', 'ga', vim.lsp.buf.code_action(), opts)
+  keymap.set('n', 'gh', vim.lsp.buf.hover(), opts)
+  keymap.set('n', 'gf', vim.lsp, opts)
+  keymap.set('n', 'gr', vim.lsp.buf.rename(), opts)
+  keymap.set('n', 'go', vim.diagnostic.show(), opts)
+  keymap.set('n', 'gj', vim.diagnostic.goto_next(), opts)
+  keymap.set('n', 'gk', vim.diagnostic.goto_prev(), opts)
 end
 
 vim.diagnostic.config({
@@ -32,13 +42,20 @@ nvim_lsp.tsserver.setup {
 
 -- java language server
 require('lspconfig')['jdtls'].setup {
-    capabilities = capabilities
+  capabilities = capabilities,
+  autostart = false
 }
 
 -- dart language server
-require("flutter-tools").setup{}
+require("flutter-tools").setup{
+  autostart = false
+}
 
 -- astro language server
-nvim_lsp.astro.setup{}
---tailwindcss language server
-nvim_lsp.tailwindcss.setup{}
+nvim_lsp.astro.setup{
+    autostart = false
+}
+-- tailwindcss language server
+nvim_lsp.tailwindcss.setup{
+    autostart = false
+}
