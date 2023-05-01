@@ -37,7 +37,8 @@ vim.diagnostic.config({
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
+  autostart = false,
+  cmd = { "typescript-language-server", "--stdio" }
 }
 
 -- java language server

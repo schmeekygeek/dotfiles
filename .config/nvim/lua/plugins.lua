@@ -21,6 +21,7 @@ packer.startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'                    -- Telescope's file-browser extension
   use 'windwp/nvim-ts-autotag'                                        -- Auto tag pairing
   use 'nvim-lua/plenary.nvim'
+  use 'ThePrimeagen/harpoon'
   use 'nvim-telescope/telescope.nvim'                                 -- telescope 
   use 'kyazdani42/nvim-web-devicons'                                  -- web devicons
   use 'akinsho/nvim-bufferline.lua'                                   -- bufferline

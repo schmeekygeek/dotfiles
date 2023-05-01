@@ -28,9 +28,6 @@ keymap.set('n', '-', '<C-w><')
 keymap.set('i', '<C-BS>', '<C-w>', opts)
 keymap.set('i', '<C-h>', '<C-w>', opts)
 
--- Nvim tree
-keymap.set('n', 'e', ':NvimTreeOpen<cr>', opts)
-
 -- Buffers
 keymap.set('n', 'X', ':bdelete<Return>', opts)
 
@@ -48,3 +45,6 @@ keymap.set('n', 'gR', function() vb.rename() end, opts)
 keymap.set('n', 'go', function() vd.open_float() end, opts)
 keymap.set('n', 'gj', function() vd.goto_next() end, opts)
 keymap.set('n', 'gk', function() vd.goto_prev() end, opts)
+
+-- Flutter
+keymap.set('n', 'gc', ':FlutterLogClear<cr>', opts)
