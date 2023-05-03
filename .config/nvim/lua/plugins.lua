@@ -33,4 +33,5 @@ packer.startup(function(use)
   use 'ggandor/leap.nvim'                                             -- mason lspconfig
   use 'rebelot/kanagawa.nvim'                                         -- kanagawa color scheme
   use 'theprimeagen/vim-be-good'                                      -- plugin to practice vim
+  use ({ 'Wansmer/treesj', requires = { 'nvim-treesitter' } })              -- plugin to toggle or split codeblocks
 end)
