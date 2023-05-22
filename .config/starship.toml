@@ -1,5 +1,5 @@
 format = """
-$path$directory$package(normal)$git_branch$cmd_duration$java
+$path$directory$package(normal)$git_branch$cmd_duration
 $character[](green)[](cyan)[](yellow) """
 
 add_newline = true

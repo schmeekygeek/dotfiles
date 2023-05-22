@@ -1,5 +1,5 @@
 local status, lualine = pcall(require, 'lualine')
-if (not status) then print("lualine not installed") return end
+if (not status) then print("lualine is not installed") return end
 
 local colors = {
   bg       = '#202328',
@@ -214,4 +214,6 @@ ins_right {
 }
 
 -- Now don't forget to initialize lualine
-lualine.setup(config)
+-- Uncomment to setup lualine evil
+-- lualine.setup(config)
+lualine.setup()

@@ -10,8 +10,9 @@ rosepine.setup({
 	disable_italics = true,
 
 	-- Change specific vim highlight groups
-	highlight_groups = {
-		ColorColumn = { bg = 'rose' }
-	},
+	-- highlight_groups = {
+	-- 	ColorColumn = { bg = 'rose' }
+	-- },
 })
-vim.cmd("colorscheme rose-pine")
+
+vim.cmd 'colorscheme catppuccin'

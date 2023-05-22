@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
+  },
+  nvim = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -169,11 +179,6 @@ _G.packer_plugins = {
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -193,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  treesj = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/treesj",
+    url = "https://github.com/Wansmer/treesj"
   },
   ["vim-be-good"] = {
     loaded = true,

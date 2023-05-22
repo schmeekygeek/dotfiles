@@ -41,10 +41,10 @@ opt.formatoptions:append { 'r' }
 
 -- File specific tabstops and shiftwidths
 -- java
-vim.cmd "autocmd FileType java setlocal shiftwidth=4 tabstop=4"
-
--- Colorscheme
-vim.cmd "colorscheme rose-pine"
+vim.cmd 'autocmd FileType java setlocal shiftwidth=4 tabstop=4'
 
 -- Disable mouse
-vim.api.nvim_set_option("mouse", "")
+vim.api.nvim_set_option('mouse', '')
+
+-- set transparency to completion menu
+vim.api.nvim_set_option('pumblend', 0)
