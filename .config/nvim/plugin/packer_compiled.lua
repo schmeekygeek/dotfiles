@@ -99,6 +99,16 @@ _G.packer_plugins = {
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["hacker.nvim"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/hacker.nvim",
+    url = "https://github.com/letieu/hacker.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -133,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  moonfly = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/moonfly",
+    url = "https://github.com/bluz71/vim-moonfly-colors"
   },
   neovim = {
     loaded = true,

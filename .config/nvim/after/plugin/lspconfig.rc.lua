@@ -2,7 +2,9 @@ local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
 local status, mason = pcall(require, 'mason')
 local masonlsp = require('mason-lspconfig')
 if (not status) then return end
@@ -11,7 +13,9 @@ mason.setup()
 masonlsp.setup()
 
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
@@ -30,7 +34,7 @@ local on_attach = function(client, bufnr)
 end
 
 vim.diagnostic.config({
-  signs = false,
+  signs = true,
 })
 
 -- typescript language server
@@ -38,11 +42,12 @@ nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   autostart = false,
-  cmd = { "typescript-language-server", "--stdio" }
+  cmd = { "typescript-language-server", "--stdio" },
 }
 
 -- java language server
-require('lspconfig')['jdtls'].setup {
+-- local jvmargs = os.getenv("JDTLS_JVM_ARGS")
+nvim_lsp.jdtls.setup {
   capabilities = capabilities,
   autostart = false
 }
@@ -58,5 +63,13 @@ nvim_lsp.astro.setup{
 }
 -- tailwindcss language server
 nvim_lsp.tailwindcss.setup{
+    autostart = false
+}
+-- rust language server
+nvim_lsp.rust_analyzer.setup{
+    autostart = false
+}
+
+nvim_lsp.gopls.setup{
     autostart = false
 }

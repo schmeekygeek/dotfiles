@@ -16,7 +16,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-buffer'                                            -- nvim-cmp source for buffer words
   use 'hrsh7th/cmp-nvim-lsp'                                          -- nvim-cmp source for neovim's built-in LSP
   use 'hrsh7th/nvim-cmp'                                              -- Completion
-  use({'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*'})                -- Snippet engine
+  use ({'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*'})                -- Snippet engine
   use 'nvim-treesitter/nvim-treesitter'                               -- Treesitter syntax highlighting
   use 'windwp/nvim-autopairs'                                         -- Auto parentheses pairing
   use 'nvim-telescope/telescope-file-browser.nvim'                    -- Telescope's file-browser extension
@@ -34,5 +34,8 @@ packer.startup(function(use)
   use 'ggandor/leap.nvim'                                             -- nvim leap
   use 'rebelot/kanagawa.nvim'                                         -- kanagawa color scheme
   use 'theprimeagen/vim-be-good'                                      -- plugin to practice vim
+  use 'letieu/hacker.nvim'
+  use { "bluz71/vim-moonfly-colors", as = "moonfly" }
+  use { "ellisonleao/gruvbox.nvim" }
   use ({ 'Wansmer/treesj', requires = { 'nvim-treesitter' } })        -- plugin to toggle or split codeblocks
 end)

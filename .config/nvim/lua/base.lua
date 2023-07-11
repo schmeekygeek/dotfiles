@@ -48,3 +48,7 @@ vim.api.nvim_set_option('mouse', '')
 
 -- set transparency to completion menu
 vim.api.nvim_set_option('pumblend', 0)
+
+-- colorscheme
+vim.g.gruvbox_contrast_dark="hard"
+vim.cmd("colorscheme gruvbox")

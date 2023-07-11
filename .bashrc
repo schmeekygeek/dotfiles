@@ -15,7 +15,9 @@ export EXA_ICON_SPACING=2
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$HOME/.cargo/bin/:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
-export JDTLS_JVM_ARGS="-javaagent:$HOME/Downloads/lombok.jar"
+export JDTLS_JVM_ARGS="-Xms256m \
+  -Xmx512m
+  -javaagent:$HOME/Downloads/lombok.jar"
 export ANDROID_SDK_ROOT='/opt/android-sdk'
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
@@ -43,12 +45,12 @@ alias nn='ns -l'
 alias nna='ns -la'
 alias cp='cp -i'
 alias mv='mv -i'
-alias wp='cd /home/abdul_samad/F/flutter/recipex-app-f'
+alias wp='cd ~/F/kaizen'
 alias bp='cd ~/E/Java/projects/spring/RecipExBackend/'
 alias eww='~/.bin/eww'
 alias neofetch-chika='neofetch --source ~/.config/neofetch/asciis/chika'
 alias mysql="mysql -p"
-alias bat="bat --theme OneHalfDark"
+alias bat="bat --theme gruvbox-dark"
 alias start-feh-blur="feh-blur --blur 4 --darken 4 -d"
 alias nl="notify-send --urgency=low \"Done\""
 alias nm="notify-send --urgency=normal \"Done\""
@@ -72,6 +74,11 @@ _fzf_complete_vim() {
   _fzf_complete --multi --reverse --prompt="vim> " -- "$@" < <(
     echo very
   )
+}
+
+# function to run and detach processes from the terminal
+detach () {
+  ( "$@" &> /dev/null & disown )
 }
 
 PS1='[\u@\h \W]\$ '
