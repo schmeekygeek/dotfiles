@@ -26,6 +26,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 export TERM="xterm-256color"
 export EDITOR=vim
 export GITHUB_ACCESS_TOKEN=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
+export GOOGLE_APPLICATION_CREDENTIALS="/home/abdul_samad/F/kaizen/firebase-mithuji.json"
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
  --height 60%
  --reverse
@@ -40,7 +41,7 @@ export FZF_COMPLETION_OPTS='--border --info=inline'
 #Aliases
 alias ka='killall'
 alias screenkey='screenkey -s small --opacity 0.5 -g 300x840 --font JetBrainsMono --bg-color black --font-color white'
-alias ns='exa --git --no-user'
+alias ns='exa --git --no-user --icons'
 alias nn='ns -l'
 alias nna='ns -la'
 alias cp='cp -i'
@@ -81,6 +82,11 @@ detach () {
   ( "$@" &> /dev/null & disown )
 }
 
+# function to get status of process
+status () {
+  ( ps aux | grep "$@" )
+}
+
 PS1='[\u@\h \W]\$ '
 
 # Starship prompt
@@ -96,3 +102,6 @@ echo
 # cowsay `fortune -n 160`
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+# set vim keybindings
+set -o vi

@@ -43,6 +43,9 @@ opt.formatoptions:append { 'r' }
 -- java
 vim.cmd 'autocmd FileType java setlocal shiftwidth=4 tabstop=4'
 
+-- go
+vim.cmd 'autocmd FileType go setlocal shiftwidth=2 tabstop=2'
+
 -- Disable mouse
 vim.api.nvim_set_option('mouse', '')
 

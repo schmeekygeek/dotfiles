@@ -1,5 +1,4 @@
 #!/bin/bash
-
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -34,7 +33,7 @@ fi
 
 
 xset -b r rate 210 35 &
-setxkbmap dvorak &
+setxkbmap us -v dvorak &
 nitrogen --restore &
 exec bspwm &
 exec sxhkd -m -1
