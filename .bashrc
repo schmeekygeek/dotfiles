@@ -37,6 +37,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
  --color=marker:#ebbcba,spinner:#eb6f92,header:#ebbcba"
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_COMPLETION_OPTS='--border --info=inline'
+export GOPATH=$HOME/go/
 
 #Aliases
 alias ka='killall'
@@ -46,7 +47,7 @@ alias nn='ns -l'
 alias nna='ns -la'
 alias cp='cp -i'
 alias mv='mv -i'
-alias wp='cd ~/F/kaizen'
+alias wp='cd ~/F/kaizen/mithuji-backend'
 alias bp='cd ~/E/Java/projects/spring/RecipExBackend/'
 alias eww='~/.bin/eww'
 alias neofetch-chika='neofetch --source ~/.config/neofetch/asciis/chika'
@@ -59,6 +60,7 @@ alias nh="notify-send --urgency=critical \"Pwease hurry, senpaii!! >~<\""
 alias grep="rg"
 alias bf="bat \`fzf\`"
 alias vf="vim \`fzf\`"
+alias cf="cd \`find . -type d -print | cut -c 3- | fzf\`"
 alias cr="cargo run"
 alias cb="cargo build"
 
@@ -99,6 +101,7 @@ echo
 echo -en "${RED}\e[3m❤ $(cat ~/.cache/qwote.txt) ❤\e[0m${NC}"
 echo -en "\n${BLUE}\e[3m- $(cat ~/.cache/author.txt)\e[0m${NC}"
 echo
+fortune
 # cowsay `fortune -n 160`
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
