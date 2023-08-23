@@ -34,6 +34,7 @@ fi
 
 xset -b r rate 210 35 &
 setxkbmap us -v dvorak &
+setxkbmap -option caps:escape &
 nitrogen --restore &
 exec bspwm &
 exec sxhkd -m -1
