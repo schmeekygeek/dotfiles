@@ -53,5 +53,5 @@ keymap.set('n', 'gk', function() vd.goto_prev() end, opts)
 keymap.set('n', 'gc', ':FlutterLogClear<cr>', opts)
 
 -- Move lines up or down
-keymap.set('v', 'K', ':move--1<cr>gv', opts)
-keymap.set('v', 'J', ':move++1<cr>gv', opts)
+keymap.set('v', 'K', ':m \'<-2<cr>=\'[gv', opts)
+keymap.set('v', 'J', ':m \'>+1<cr>=\'[gv', opts)
