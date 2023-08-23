@@ -36,6 +36,8 @@ packer.startup(function(use)
   use 'theprimeagen/vim-be-good'                                      -- plugin to practice vim
   use 'letieu/hacker.nvim'
   use { "bluz71/vim-moonfly-colors", as = "moonfly" }
-  use { "ellisonleao/gruvbox.nvim" }
+  use 'ellisonleao/gruvbox.nvim'
+  use 'iagorrr/noctis-hc.nvim'
+  use 'f-person/git-blame.nvim'
   use ({ 'Wansmer/treesj', requires = { 'nvim-treesitter' } })        -- plugin to toggle or split codeblocks
 end)

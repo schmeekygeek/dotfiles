@@ -54,4 +54,4 @@ vim.api.nvim_set_option('pumblend', 0)
 
 -- colorscheme
 vim.g.gruvbox_contrast_dark="hard"
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme noctishc")

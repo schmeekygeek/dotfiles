@@ -1,9 +1,12 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
--- Do not yank with x and d
-keymap.set('n', 'x', '"_x')
-keymap.set('n', 'd', '"_d')
+-- Git blame
+keymap.set('n', 'gb', ':GitBlameToggle<Return>', opts)
+
+-- Do not yank with x, d and p
+keymap.set('n', 'x', '"0x', opts)
+keymap.set('n', 'd', '"_d', opts)
 
 -- Increment/Decrement
 keymap.set('n', '+', '<C-a>')
@@ -31,7 +34,7 @@ keymap.set('i', '<C-h>', '<C-w>', opts)
 -- Buffers
 keymap.set('n', 'X', ':bdelete<Return>', opts)
 
--- Lspsaga
+-- Neovim Lsp
 local vb = vim.lsp.buf
 local vd = vim.diagnostic
 
@@ -48,3 +51,7 @@ keymap.set('n', 'gk', function() vd.goto_prev() end, opts)
 
 -- Flutter
 keymap.set('n', 'gc', ':FlutterLogClear<cr>', opts)
+
+-- Move lines up or down
+keymap.set('v', 'K', ':move--1<cr>gv', opts)
+keymap.set('v', 'J', ':move++1<cr>gv', opts)
