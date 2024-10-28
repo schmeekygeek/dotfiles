@@ -24,7 +24,7 @@ packer.startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'ThePrimeagen/harpoon'
   use 'nvim-telescope/telescope.nvim'                                 -- telescope 
-  -- use 'kyazdani42/nvim-web-devicons'                                  -- web devicons
+  use 'kyazdani42/nvim-web-devicons'                                  -- web devicons
   use 'akinsho/nvim-bufferline.lua'                                   -- bufferline
   use 'akinsho/flutter-tools.nvim'                                    -- flutter development tools
   use 'dart-lang/dart-vim-plugin'                                     -- Dart plugin for neovim
@@ -38,6 +38,12 @@ packer.startup(function(use)
   use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   use 'ellisonleao/gruvbox.nvim'
   use 'iagorrr/noctis-hc.nvim'
+  use 'mfussenegger/nvim-jdtls'
   use 'f-person/git-blame.nvim'
   use ({ 'Wansmer/treesj', requires = { 'nvim-treesitter' } })        -- plugin to toggle or split codeblocks
+  use 'preservim/vim-pencil'
+  use 'craftzdog/solarized-osaka.nvim'
+  use '/home/abdul_samad/development/nvimplugs/example'
+  use 'diegoulloao/neofusion.nvim'
+  use 'nvim-treesitter/nvim-treesitter-context'
 end)

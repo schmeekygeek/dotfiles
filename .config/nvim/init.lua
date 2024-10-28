@@ -1,6 +1,8 @@
+require('plugins')
 require('base')
 require('highlights')
 require('maps')
 require('clipboard')
-require('plugins')
-require('java')
+
+--set the colorscheme
+--vim.cmd[[ colorscheme neofusion ]]

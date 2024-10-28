@@ -7,10 +7,11 @@ ts.setup {
   },
   indent = {
     enable = true,
-    disable = {},
+    disable = {'dart'},
   },
   ensure_installed = {
     'tsx',
+    'typescript',
     'lua',
     'json',
     'css',

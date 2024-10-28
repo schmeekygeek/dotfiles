@@ -38,23 +38,20 @@ vim.diagnostic.config({
 })
 
 -- typescript language server
-nvim_lsp.tsserver.setup {
+nvim_lsp.ts_ls.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   autostart = false,
   cmd = { "typescript-language-server", "--stdio" },
 }
 
--- java language server
--- local jvmargs = os.getenv("JDTLS_JVM_ARGS")
-nvim_lsp.jdtls.setup {
-  capabilities = capabilities,
-  autostart = false
-}
-
 -- dart language server
 require("flutter-tools").setup{
-  autostart = false
+
+  lsp = {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
 }
 
 -- astro language server
@@ -70,6 +67,14 @@ nvim_lsp.rust_analyzer.setup{
     autostart = false
 }
 
+nvim_lsp.svelte.setup{
+    autostart = false
+}
+
 nvim_lsp.gopls.setup{
+    autostart = false
+}
+
+nvim_lsp.grammarly.setup{
     autostart = false
 }

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?.lua;/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.1692716794/share/lua/5.1/?/init.lua;/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?.lua;/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.1692716794/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/abdul_samad/.cache/nvim/packer_hererocks/2.1.1692716794/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -94,10 +94,20 @@ _G.packer_plugins = {
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
     url = "https://github.com/dart-lang/dart-vim-plugin"
   },
+  example = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/example",
+    url = "/home/abdul_samad/development/nvimplugs/example"
+  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
+  ["git-blame.nvim"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
+    url = "https://github.com/f-person/git-blame.nvim"
   },
   ["gruvbox.nvim"] = {
     loaded = true,
@@ -149,10 +159,20 @@ _G.packer_plugins = {
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/moonfly",
     url = "https://github.com/bluz71/vim-moonfly-colors"
   },
+  ["neofusion.nvim"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/neofusion.nvim",
+    url = "https://github.com/diegoulloao/neofusion.nvim"
+  },
   neovim = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
+  },
+  ["noctis-hc.nvim"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/noctis-hc.nvim",
+    url = "https://github.com/iagorrr/noctis-hc.nvim"
   },
   nvim = {
     loaded = true,
@@ -189,10 +209,20 @@ _G.packer_plugins = {
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -203,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["solarized-osaka.nvim"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/solarized-osaka.nvim",
+    url = "https://github.com/craftzdog/solarized-osaka.nvim"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
@@ -223,6 +258,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/theprimeagen/vim-be-good"
+  },
+  ["vim-pencil"] = {
+    loaded = true,
+    path = "/home/abdul_samad/.local/share/nvim/site/pack/packer/start/vim-pencil",
+    url = "https://github.com/preservim/vim-pencil"
   }
 }
 

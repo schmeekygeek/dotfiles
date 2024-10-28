@@ -51,6 +51,7 @@ keymap.set('n', 'gk', function() vd.goto_prev() end, opts)
 
 -- Flutter
 keymap.set('n', 'gc', ':FlutterLogClear<cr>', opts)
+keymap.set('n', 'gt', ':FlutterOutlineToggle<cr>', opts)
 
 -- Move lines up or down
 keymap.set('v', 'K', ':m \'<-2<cr>=\'[gv', opts)

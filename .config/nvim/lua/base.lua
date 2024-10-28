@@ -25,6 +25,7 @@ opt.si = true --Smart indent
 opt.wrap = false
 opt.backspace = 'start,eol,indent'
 opt.path:append { '**' } -- finding files - Search down into subfolders
+opt.guicursor = "n-v-i-c:block"
 opt.wildignore:append { '*/node_modules/*' }
 
 -- Undercurl
@@ -52,6 +53,4 @@ vim.api.nvim_set_option('mouse', '')
 -- set transparency to completion menu
 vim.api.nvim_set_option('pumblend', 0)
 
--- colorscheme
 vim.g.gruvbox_contrast_dark="hard"
-vim.cmd("colorscheme noctishc")
