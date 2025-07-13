@@ -67,14 +67,23 @@ nvim_lsp.rust_analyzer.setup{
     autostart = false
 }
 
+-- svelte language server
 nvim_lsp.svelte.setup{
     autostart = false
 }
 
+-- go language server
 nvim_lsp.gopls.setup{
-    autostart = false
+    autostart = true
 }
 
-nvim_lsp.grammarly.setup{
-    autostart = false
+nvim_lsp.basedpyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    basedpyright = {
+      typeCheckingMode = "basic", -- or "strict"
+      autoImportCompletions = true,
+    }
+  }
 }

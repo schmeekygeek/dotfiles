@@ -4,5 +4,5 @@ require('highlights')
 require('maps')
 require('clipboard')
 
---set the colorscheme
---vim.cmd[[ colorscheme neofusion ]]
+-- set the colorscheme
+-- vim.cmd[[ colorscheme rose-pine ]]

@@ -47,6 +47,9 @@ vim.cmd 'autocmd FileType java setlocal shiftwidth=4 tabstop=4'
 -- go
 vim.cmd 'autocmd FileType go setlocal shiftwidth=2 tabstop=2'
 
+-- typescript and tsx
+vim.cmd 'autocmd FileType typescript,typescriptreact setlocal shiftwidth=4 tabstop=4 softtabstop=4'
+
 -- Disable mouse
 vim.api.nvim_set_option('mouse', '')
 

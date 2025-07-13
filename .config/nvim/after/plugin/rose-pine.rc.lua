@@ -14,3 +14,4 @@ rosepine.setup({
   -- 	ColorColumn = { bg = 'rose' }
   -- },
 })
+vim.cmd[[ colorscheme rose-pine ]]

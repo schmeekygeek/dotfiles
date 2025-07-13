@@ -46,4 +46,5 @@ packer.startup(function(use)
   use '/home/abdul_samad/development/nvimplugs/example'
   use 'diegoulloao/neofusion.nvim'
   use 'nvim-treesitter/nvim-treesitter-context'
+  use 'folke/tokyonight.nvim'
 end)
