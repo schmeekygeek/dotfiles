@@ -7,6 +7,13 @@ end
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
+  use {
+    "gabrielfrimodig/seashell.nvim",
+    config = function()
+      -- Theme loads automatically on startup
+      -- vim.cmd("colorscheme seashell")
+    end
+  }
   use 'wbthomason/packer.nvim'                                        -- Packer itself
   use 'catppuccin/nvim'                                               -- catppuccin color scheme
   use 'rose-pine/neovim'                                              -- rose-pine color scheme
@@ -43,7 +50,7 @@ packer.startup(function(use)
   use ({ 'Wansmer/treesj', requires = { 'nvim-treesitter' } })        -- plugin to toggle or split codeblocks
   use 'preservim/vim-pencil'
   use 'craftzdog/solarized-osaka.nvim'
-  use '/home/abdul_samad/development/nvimplugs/example'
+--   use '/home/abdul_samad/development/nvimplugs/example'
   use 'diegoulloao/neofusion.nvim'
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'folke/tokyonight.nvim'

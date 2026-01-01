@@ -8,7 +8,7 @@ nvim_tree.setup {
   hijack_cursor       = false,
   update_cwd          = false,
   diagnostics = {
-    enable = false,
+    enable = true,
     icons = {
       hint = "",
       info = "",

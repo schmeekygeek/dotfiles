@@ -17,8 +17,5 @@ ts.setup {
     'css',
     'java',
     'dart',
-  },
-  autotag = {
-    enable = true,
-  },
+  }
 }

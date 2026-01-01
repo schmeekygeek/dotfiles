@@ -2,9 +2,7 @@ local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
-local capabilities = require('cmp_nvim_lsp').default_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local status, mason = pcall(require, 'mason')
 local masonlsp = require('mason-lspconfig')
 if (not status) then return end
@@ -12,38 +10,42 @@ if (not status) then return end
 mason.setup()
 masonlsp.setup()
 
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
+local on_attach = function(_, bufnr)
 
-  -- Mappings.
   local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  keymap.set('n', 'gD', vim.lsp.buf.declaration(), opts)
-  keymap.set('n', 'gi', vim.lsp.buf.implementation(), opts)
-  keymap.set('n', 'gd', vim.lsp.buf.definition(), opts)
-  keymap.set('n', 'ga', vim.lsp.buf.code_action(), opts)
-  keymap.set('n', 'gh', vim.lsp.buf.hover(), opts)
-  keymap.set('n', 'gf', vim.lsp, opts)
-  keymap.set('n', 'gr', vim.lsp.buf.rename(), opts)
-  keymap.set('n', 'go', vim.diagnostic.show(), opts)
-  keymap.set('n', 'gj', vim.diagnostic.goto_next(), opts)
-  keymap.set('n', 'gk', vim.diagnostic.goto_prev(), opts)
+  vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, opts)
+  vim.keymap.set('n', 'gi', function() vim.lsp.buf.implementation() end, opts)
+  vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set('n', 'ga', function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set('n', 'gh', function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set('n', 'gf', function() vim.lsp.buf.format() end, opts)  -- fixed
+  vim.keymap.set('n', 'gr', function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set('n', 'go', function() vim.diagnostic.open_float() end, opts)
+  vim.keymap.set('n', 'gj', function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set('n', 'gk', function() vim.diagnostic.goto_prev() end, opts)
 end
 
 vim.diagnostic.config({
+  virtual_text = {
+    spacing = 2,
+  },
   signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
 })
 
 -- typescript language server
-nvim_lsp.ts_ls.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  autostart = false,
+vim.lsp.config.ts_ls = {
   cmd = { "typescript-language-server", "--stdio" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  capabilities = capabilities,
+  on_attach = on_attach,
+  autostart = false
 }
+vim.lsp.enable("ts_ls")
 
 -- dart language server
 require("flutter-tools").setup{
@@ -55,29 +57,45 @@ require("flutter-tools").setup{
 }
 
 -- astro language server
-nvim_lsp.astro.setup{
-    autostart = false
+vim.lsp.config.astro = {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  autostart = true
 }
+vim.lsp.enable("astro")
+
 -- tailwindcss language server
-nvim_lsp.tailwindcss.setup{
-    autostart = false
+vim.lsp.config.tailwindcss = {
+  autostart = false
 }
+vim.lsp.enable("tailwindcss")
+
+
 -- rust language server
-nvim_lsp.rust_analyzer.setup{
-    autostart = false
+vim.lsp.config.rust_analyzer = {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  autostart = false
 }
+vim.lsp.enable("rust_analyzer")
 
 -- svelte language server
-nvim_lsp.svelte.setup{
-    autostart = false
+vim.lsp.config.svelte = {
+  autostart = false,
+  capabilities = capabilities,
+  on_attach = on_attach,
 }
+vim.lsp.enable("rust_analyzer")
 
 -- go language server
-nvim_lsp.gopls.setup{
-    autostart = true
+vim.lsp.config.gopls = {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  autostart = true
 }
+vim.lsp.enable("tailwindcss")
 
-nvim_lsp.basedpyright.setup {
+vim.lsp.basedpyright = {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -87,3 +105,4 @@ nvim_lsp.basedpyright.setup {
     }
   }
 }
+vim.lsp.enable("basedpyright")

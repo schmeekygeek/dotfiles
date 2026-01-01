@@ -5,4 +5,4 @@ require('maps')
 require('clipboard')
 
 -- set the colorscheme
--- vim.cmd[[ colorscheme rose-pine ]]
+-- vim.cmd[[ colorscheme solarized-osaka ]]
